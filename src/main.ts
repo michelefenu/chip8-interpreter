@@ -1,8 +1,14 @@
-import { Display } from './app/display';
+import { Emulator } from "./app/emulator";
 
-document.addEventListener('DOMContentLoaded', () => {
-    const display = new Display('chip8-display');
-    display.clear();
-
-    display.draw(30, 10, 1);
+document.addEventListener("DOMContentLoaded", () => {
+  const emulator = new Emulator("chip8-display");
+  fetch("roms/Space-Invaders.ch8")
+    .then((response) => response.arrayBuffer())
+    .then((buffer) => {
+      console.log(buffer);
+      const rom = new Uint8Array(buffer);
+      emulator.loadProgram(rom);
+      emulator.start();
+    })
+    .catch((error) => console.error("Failed to load ROM:", error));
 });
