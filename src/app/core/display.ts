@@ -1,7 +1,7 @@
 export class Display {
     private canvas: HTMLCanvasElement;
     private context: CanvasRenderingContext2D;
-    private scale: number = 20;  // Scale factor to enlarge the CHIP-8's 64x32 display
+    private scale: number = 15;  // Scale factor to enlarge the CHIP-8's 64x32 display
     private width: number = 64;
     private height: number = 32;
     private display: Uint8Array;

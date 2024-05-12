@@ -11,13 +11,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ch8$/i,
-        type: "asset/resource", // This treats .ch8 files as assets to be copied over.
-        generator: {
-            filename: 'roms/[name][ext]'  // Output the files in 'dist/roms' directory
-        }
-      },
-      {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
         use: [
           {
@@ -40,6 +33,15 @@ module.exports = {
         ],
       },
       {
+        test: /\.scss$/,
+        use: [
+          'style-loader',  // Injects CSS into the DOM.
+          'css-loader',    // Turns CSS into commonjs.
+          'postcss-loader', // Processes CSS with PostCSS.
+          'sass-loader'   // Turns SCSS into CSS.
+        ]
+      },
+      {
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
@@ -47,17 +49,15 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js", ".scss"],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "src/index.html",
     }),
     new CopyPlugin({
-        patterns: [
-          { from: "roms", to: "roms" },
-        ],
-      }),
+      patterns: [{ from: "roms", to: "roms" }],
+    }),
   ],
   devServer: {
     static: {

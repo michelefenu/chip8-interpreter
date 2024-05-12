@@ -1,8 +1,9 @@
+import './main.scss';
 import { Emulator } from "./app/emulator";
 
 document.addEventListener("DOMContentLoaded", () => {
   const emulator = new Emulator("chip8-display");
-  fetch("roms/Space-Invaders.ch8")
+  fetch("roms/maze.ch8")
     .then((response) => response.arrayBuffer())
     .then((buffer) => {
       console.log(buffer);
