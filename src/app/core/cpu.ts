@@ -22,7 +22,7 @@ export class CPU {
   reset() {
     this.memory.initialize();
     this.timers.resetTimers();
-
+    this.display.clear();
     this.V = new Uint8Array(16);
     this.I = 0;
     this.PC = 0x200; // Program counter starts at 0x200 as the first 512 bytes are reserved

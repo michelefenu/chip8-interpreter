@@ -14,6 +14,8 @@ export class Memory {
     }
 
     public loadProgram(program: Uint8Array): void {
+        this.initialize();
+        
         for (let i = 0; i < program.length; i++) {
             this.memory[0x200 + i] = program[i];
         }

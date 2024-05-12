@@ -13,6 +13,7 @@ export class Emulator {
     private display: Display;
     private input: Input;
     private timers: Timers;
+    private intervalRef!: any;
 
     constructor(canvasId: string) {
         this.memory = new Memory();
@@ -23,15 +24,17 @@ export class Emulator {
     }
 
     public loadProgram(program: Uint8Array): void {
-        this.memory.loadProgram(program);
+        this.cpu.loadGame(program);
     }
 
     public start(): void {
+        clearInterval(this.intervalRef);
+        
         this.executeCycle();
     }
 
     private executeCycle(): void {
-        setInterval(() => {
+        this.intervalRef = setInterval(() => {
             this.cpu.cycle();
         }, 1000 / frameRate);  // Execute at 60 Hz TODO replace with requestAnimationFrame
     }

@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CHIP-8 Interpreter</title>
+    <title>Chip8 Emulator</title>
   </head>
   <body>
     <div class="flex pt-5">
       <div>
-        <div class="font-mono">Chip8 Emulator</div>
+        <div class="font-mono mb-5 text-3xl">CHIP8 EMULATOR</div>
         <canvas id="chip8-display" width="640" height="320"></canvas>
       </div>
-      <div >Select a game</div>
+      <div class="flex flex-col">
+        <div class="font-mono">SELECT A GAME</div>
+        <div id="game">
+        </div>
+      </div>
     </div>
   </body>
 </html>
