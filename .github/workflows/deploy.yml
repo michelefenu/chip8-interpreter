@@ -26,6 +26,6 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ftp.fenu.dev
-        username: json2typescript@fenu.dev
+        username: chip8-emulator@fenu.dev
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: dist/
