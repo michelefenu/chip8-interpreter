@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   for(let game of games) {
     const card = document.createElement('div');
+    card.classList.add('rom-item');
     card.innerText = game.name;
     card.onclick = () => startGame(game.romFile);
     gameSelect?.appendChild(card);

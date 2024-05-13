@@ -10,4 +10,19 @@ body {
 canvas {
   background-color: #000;
   display: block;
+  border: 1px solid lightgreen;
+
+}
+
+.rom-item {
+  border: 2px dashed lightgreen;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+.rom-item:hover {
+  background-color: lightgreen;
+  color: black;
 }
