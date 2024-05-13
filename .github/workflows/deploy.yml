@@ -28,4 +28,4 @@ jobs:
         server: ftp.fenu.dev
         username: json2typescript@fenu.dev
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: build/
+        local-dir: dist/
