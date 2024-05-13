@@ -1,0 +1,31 @@
+on: 
+    push:
+      branches:
+        - main
+  name: Deploy to SiteGround
+  jobs:
+    FTP-Deploy-Action:
+      name: FTP-Deploy-Action
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: ['20']
+      steps:
+      - uses: actions/checkout@v2.1.0
+        with:
+          fetch-depth: 2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run build
+        env:
+          CI: true
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.fenu.dev
+          username: chip8-emulator@fenu.dev
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist/
