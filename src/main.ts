@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.appendChild(uploadInput);
 
   const uploadButton = document.createElement('button');
-  uploadButton.innerText = 'Upload ROM...';
+  uploadButton.innerText = 'Upload CHIP8 ROM...';
   uploadButton.classList.add('rom-item');
   uploadButton.onclick = () => uploadInput.click();
 
