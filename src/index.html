@@ -4,27 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chip8 Emulator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   </head>
   <body>
-    <div class="flex-col pt-5">
-      <div>
-        <div class="font-mono mb-5 text-3xl mb-3">CHIP8 EMULATOR</div>
-        <div class="flex">
-          <canvas id="chip8-display" width="640" height="320"></canvas>
-          <div class="flex flex-col ms-5">
-            <div class="font-mono mb-3">LOAD A GAME</div>
-            <div id="game" class="flex flex-wrap"></div>
-          </div>
-        </div>
+    <div class="flex flex-col items-center pt-5 space-y-5">
+      <div class="w-full max-w-4xl text-center">
+        <div class="font-mono mb-5 text-3xl">CHIP8 EMULATOR</div>
       </div>
-      <div>
+      <div class="w-full max-w-4xl">
+        <canvas id="chip8-display" class="w-full" width="640" height="320"></canvas>
+      </div>
+      <div class="w-full max-w-4xl text-center">
+        <div class="font-mono mb-3">LOAD A GAME</div>
+        <div id="game" class="flex flex-wrap justify-center"></div>
+      </div>
+      <div class="w-full max-w-4xl text-center">
         <div class="font-mono my-3">Keyboard Layout</div>
         <div class="font-mono my-3">
-          1 2 3 4 <br>
-          Q W E R <br>
-          A S D F <br>
-          Z X C V <br>
-
+          1 2 3 4 <br />
+          Q W E R <br />
+          A S D F <br />
+          Z X C V <br />
         </div>
       </div>
     </div>
