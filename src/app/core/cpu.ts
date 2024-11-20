@@ -235,6 +235,5 @@ export class CPU {
       default:
         throw new Error("Unknown opcode: " + opcode);
     }
-
   }
 }
